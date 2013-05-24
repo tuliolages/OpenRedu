@@ -3,26 +3,24 @@
 // ==========================================================================
 
 .landing-navigation {
-  margin: -70px 0 40px;
-
-  .boxshadow & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.5)); }
+  @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.5));
+  margin: -90px 0 40px;
 
   h4 { color: $gray6; }
 }
 
 .landing-navigation-item {
+  &:first-child { @include box-shadow(0 -1px 0 $white inset); }
 
-  .boxshadow &:first-child { @include box-shadow(0 -1px 0 $white inset); }
-
-  & + & {
+  & +
+  & {
     border-top: 1px solid $gray3;
 
     $box-shadow:
       0 1px 0 $white inset
     , 0 -1px 0 $white inset;
-    .boxshadow & { @include box-shadow($box-shadow); }
+    @include box-shadow($box-shadow);
   }
 
-  .boxshadow &:last-child { @include box-shadow(0 1px 0 $white inset); }
-
+  &:last-child { @include box-shadow(0 1px 0 $white inset); }
 }
